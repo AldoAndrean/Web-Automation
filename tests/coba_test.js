@@ -2,7 +2,7 @@ const { Builder, By, until } = require('selenium-webdriver');
 const assert = require('assert');
 const chrome = require('selenium-webdriver/chrome');
 
-describe('SauceDemo)', function () {
+describe('SauceDemo', function () {
     let driver;
 
     it('Success Login', async function () {
@@ -51,8 +51,7 @@ describe('SauceDemo)', function () {
             await inputPassword.sendKeys('secret_sauce');
             await buttonLogin.click();
 
-            // const highToLowOption = await driver.findElement(By.css('option[value="hilo"]'));
-            // await highToLowOption.click();
+
             let dropdownSort = await driver.findElement(By.className('product_sort_container')).click();
             let option = await driver.findElement(By.css('option[value="hilo"]'));
             await option.click();
